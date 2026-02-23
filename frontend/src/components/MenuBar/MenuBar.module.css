@@ -1,0 +1,108 @@
+.menuBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 38px;
+    padding: 0 14px;
+    background: var(--bg-bar);
+    border-bottom: 1px solid var(--border-subtle);
+    flex-shrink: 0;
+    z-index: 100;
+}
+
+.menuLeft {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.appIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: 6px;
+    flex-shrink: 0;
+}
+
+.appIconDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #1a1000;
+}
+
+.appName {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-right: 10px;
+}
+
+.menuItem {
+    font-size: 12.5px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    transition: color 0.1s, background 0.1s;
+}
+
+.menuItem:hover {
+    color: var(--text-primary);
+    background: var(--bg-surface);
+}
+
+.menuRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.zenMode {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    background: rgba(240, 180, 41, 0.12);
+    border: 1px solid rgba(240, 180, 41, 0.25);
+    border-radius: 20px;
+    padding: 4px 14px;
+    transition: background 0.15s;
+}
+
+.zenMode:hover {
+    background: rgba(240, 180, 41, 0.20);
+}
+
+.menuIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    transition: color 0.15s, background 0.15s;
+}
+
+.menuIcon:hover {
+    color: var(--text-primary);
+    background: var(--bg-surface);
+}
+
+.clock {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: -0.01em;
+    margin-left: 6px;
+    white-space: nowrap;
+}
