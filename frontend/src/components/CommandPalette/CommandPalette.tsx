@@ -68,7 +68,13 @@ export function CommandPalette({ className = "" }: Readonly<CommandPaletteProps>
                                 aria-selected={isActive}
                                 className={`${styles.suggestionRow} ${isActive ? styles.suggestionActive : ""}`}
                                 onMouseEnter={() => setActiveIndex(i)}
-                                onClick={() => setQuery("$ " + item.command)}
+                                onClick={() => {
+                                    setQuery("$ " + item.command);
+                                    if (item.command === "/notas" || item.command === "/notes") {
+                                        // window.location as fallback or router inside CommandPalette
+                                        window.location.href = "/notas";
+                                    }
+                                }}
                             >
                                 <div
                                     className={styles.suggestionIconWrap}

@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { SUGGESTIONS } from "../data/mockData";
 
 export function useCommandPalette() {
+    const router = useRouter();
     const [query, setQuery] = useState("$/notes");
     const [activeIndex, setActiveIndex] = useState(0);
     const [isFocused, setIsFocused] = useState(false);
@@ -37,7 +39,13 @@ export function useCommandPalette() {
         } else if (e.key === "Escape") {
             inputRef.current?.blur();
         } else if (e.key === "Enter" && filtered[activeIndex]) {
-            setQuery("$ " + filtered[activeIndex].command);
+            const selectedCommand = filtered[activeIndex].command;
+            setQuery("$ " + selectedCommand);
+
+            // Si el comando es exactamente /notas, navegamos a la mini-app
+            if (selectedCommand === "/notas" || selectedCommand === "/notes") {
+                router.push("/notas");
+            }
         }
     };
 
