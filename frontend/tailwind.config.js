@@ -11,7 +11,11 @@ module.exports = {
       colors: {
         "primary": "#f0b428",
         "background-light": "#f8f7f6",
-        "background-dark": "#221d10",
+        "background-dark": "#0f0f0f",
+        "surface-dark": "#1c1c1e",
+        "menu-dark": "#1a1a1a",
+        "muted-gray": "#888890",
+        "crisp-white": "#e8e8e8",
         "charcoal": "#1c1c1e",
       },
       fontFamily: {
