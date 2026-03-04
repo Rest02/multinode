@@ -36,8 +36,14 @@ export function LoginForm() {
                 throw new Error(data.message || "Failed to initialize session");
             }
 
-            // Save token to localStorage
+            // Save token to localStorage for backward compatibility (Optional)
             localStorage.setItem("multinode_token", data.access_token);
+
+            // Set token in Cookie strictly for Next.js Middleware route protection
+            // Expire in 7 days, match the backend JWT expiration maxAge
+            const expiryDate = new Date();
+            expiryDate.setDate(expiryDate.getDate() + 7);
+            document.cookie = `multinode_token=${data.access_token}; expires=${expiryDate.toUTCString()}; path=/; SameSite=Lax`;
 
             // Redirect to home
             router.push("/");
